@@ -1,0 +1,5 @@
+[Better Approach] Using Prefix and Suffix Sum – O(n) Time and O(n) Space
+In a circular array, the maximum subarray sum can be either the maximum normal sum, which is the highest sum of a non-circular array, or the maximum circular sum, which includes elements from both the start and the end of the array. The normal sum can be efficiently calculated using Kadane's algorithm. And, the circular sum is calculated by combining prefix sum and suffix sum.
+
+First, we will compute the maxSuffix array, where maxSuffix[i] stores the maximum suffix sum starting from any index >= i.
+Then, as we iterate through the input array, we combine the prefix sum up to index i with the maxSuffix value at index i + 1 (to avoid double-counting the ith element) to calculate circular sum and take the maximum for all values of i.
